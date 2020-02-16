@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApexPartyTracker.Api", "ApexPartyTracker.Api\ApexPartyTracker.Api.csproj", "{E44DF9B5-C833-42A6-BEE6-1AF2FA0A893D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexPartyTracker.Services", "ApexPartyTracker.Services\ApexPartyTracker.Services.csproj", "{7C7D0DB4-A753-447D-BAE0-7E4E7ED599E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexPartyTracker.Common", "ApexPartyTracker.Common\ApexPartyTracker.Common.csproj", "{AE3E8E51-DB41-46E0-BBEF-BFCDE15B3F61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexPartyTracker.Repositories", "ApexPartyTracker.Repositories\ApexPartyTracker.Repositories.csproj", "{25802326-9148-409E-9636-C9889167630E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApexPartyTracker.Tests", "ApexPartyTracker.Tests\ApexPartyTracker.Tests.csproj", "{A3753163-4060-4D41-AEFC-C5AA04B9CEEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{E44DF9B5-C833-42A6-BEE6-1AF2FA0A893D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E44DF9B5-C833-42A6-BEE6-1AF2FA0A893D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E44DF9B5-C833-42A6-BEE6-1AF2FA0A893D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7D0DB4-A753-447D-BAE0-7E4E7ED599E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7D0DB4-A753-447D-BAE0-7E4E7ED599E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7D0DB4-A753-447D-BAE0-7E4E7ED599E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7D0DB4-A753-447D-BAE0-7E4E7ED599E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3E8E51-DB41-46E0-BBEF-BFCDE15B3F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3E8E51-DB41-46E0-BBEF-BFCDE15B3F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3E8E51-DB41-46E0-BBEF-BFCDE15B3F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3E8E51-DB41-46E0-BBEF-BFCDE15B3F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25802326-9148-409E-9636-C9889167630E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25802326-9148-409E-9636-C9889167630E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25802326-9148-409E-9636-C9889167630E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25802326-9148-409E-9636-C9889167630E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3753163-4060-4D41-AEFC-C5AA04B9CEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3753163-4060-4D41-AEFC-C5AA04B9CEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3753163-4060-4D41-AEFC-C5AA04B9CEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3753163-4060-4D41-AEFC-C5AA04B9CEEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

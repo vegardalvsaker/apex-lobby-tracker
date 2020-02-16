@@ -9,5 +9,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApexPartyTracker.Common\ApexPartyTracker.Common.csproj" />
+    <ProjectReference Include="..\ApexPartyTracker.Repositories\ApexPartyTracker.Repositories.csproj" />
+    <ProjectReference Include="..\ApexPartyTracker.Services\ApexPartyTracker.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -11,7 +11,7 @@ const App: React.FC = () => {
             let filename = file.name
 
             formData.append('file', file, filename)
-            fetch(`${url}/resource/images`, {
+            fetch(`${url}/party/images?user=vikjard`, {
                 method: 'POST',
                 body: formData,
             })
