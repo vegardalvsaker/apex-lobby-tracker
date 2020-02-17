@@ -1,6 +1,8 @@
 ﻿using ApexPartyTracker.Common.Entities;
 using ApexPartyTracker.Common.Repositories;
 using Microsoft.WindowsAzure.Storage.Table;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApexPartyTracker.Repositories
@@ -25,6 +27,40 @@ namespace ApexPartyTracker.Repositories
             var insertOperation = TableOperation.Insert(party);
             await cloudTable.ExecuteAsync(insertOperation);
             return party;
+        }
+
+        public async Task<IEnumerable<PartyEntity>> GetPartiesAsync(string user)
+        {
+            TableQuery<PartyEntity> query = new TableQuery<PartyEntity>()
+                .Where(TableQuery.GenerateFilterCondition(
+                    nameof(PartyEntity.PartitionKey),
+                    QueryComparisons.Equal,
+                    user
+                    ));
+            var cloudTable = await getCloudTable();
+            TableContinuationToken token = null;
+            List<PartyEntity> parties = new List<PartyEntity>();
+
+            do
+            {
+                TableQuerySegment<PartyEntity> resultSegment = await cloudTable.ExecuteQuerySegmentedAsync(query, token);
+                token = resultSegment.ContinuationToken;
+                parties.AddRange(resultSegment.Results);
+            } while (token != null);
+
+            return parties;
+        }
+
+        public async void AddPartiesAsync(IEnumerable<PartyEntity> parties)
+        {
+            var cloudTable = await getCloudTable();
+            var batchOperation = new TableBatchOperation();
+            parties.ToList().ForEach(p =>
+            {
+                batchOperation.Insert(p);
+            });
+
+            cloudTable.ExecuteBatchAsync(batchOperation);
         }
     }
 }

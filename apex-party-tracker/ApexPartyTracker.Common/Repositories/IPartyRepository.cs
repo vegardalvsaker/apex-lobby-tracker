@@ -9,5 +9,7 @@ namespace ApexPartyTracker.Common.Repositories
     public interface IPartyRepository
     {
         Task<PartyEntity> AddPartyAsync(PartyEntity party);
+        void AddPartiesAsync(IEnumerable<PartyEntity> parties);
+        Task<IEnumerable<PartyEntity>> GetPartiesAsync(string user);
     }
 }

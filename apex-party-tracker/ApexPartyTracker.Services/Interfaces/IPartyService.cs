@@ -11,6 +11,8 @@ namespace ApexPartyTracker.Services.Interfaces
     {
         Task<PartyEntity> AddPartyByImageAsync(IFormFile file, string user);
         //Task<PartyEntity> AddPartyByTextAsync(string player1, string player2);
+        Task<IEnumerable<PartyEntity>> GetPartiesAsync(string user);
+        void AddPartiesAsync();
 
     }
 }
