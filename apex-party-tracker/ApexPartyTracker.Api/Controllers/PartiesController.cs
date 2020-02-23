@@ -29,10 +29,10 @@ namespace ApexLobbyTracker.Api.Controllers
                 return BadRequest(ex.ValidationMessages);
             }
         }
-        [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<PartyEntity>>> Posted([FromServices] IPartyService partyService, string user)
+        [HttpGet("{user}")]
+        public async Task<ActionResult<IEnumerable<PartyEntity>>> Get([FromServices] IPartyService partyService, string user)
         {
-            var parties = partyService.GetPartiesAsync(user);
+            var parties = await partyService.GetPartiesAsync(user);
             if (parties != null)
             {
                 return Ok(parties);
