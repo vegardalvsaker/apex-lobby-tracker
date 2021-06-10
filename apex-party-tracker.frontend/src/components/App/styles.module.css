@@ -1,0 +1,5 @@
+.container {
+    text-align: center;
+    border-bottom: var(--accent) 2px solid;
+    background-color: var();
+}
