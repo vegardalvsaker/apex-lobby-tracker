@@ -7,11 +7,8 @@ import AppContext, { IAppContext } from '../../AppContext'
 const Root: React.FC = () => {
     const [context, setContext] = useState<IAppContext>({ user: '' })
 
-    const renderWithProps = () => {
-        return
-    }
     return (
-        <AppContext.Provider value={{ user: 'vikjard' }}>
+        <AppContext.Provider value={context}>
             <Router>
                 <Switch>
                     <Route exact path="/history">

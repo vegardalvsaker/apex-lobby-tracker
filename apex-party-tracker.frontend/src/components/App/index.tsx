@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from './styles.module.css'
+import Navbar from '../Navbar'
 
 const url = 'https://localhost:44379/api'
 
@@ -23,15 +25,18 @@ const App: React.FC = () => {
     }
 
     return (
-        <div>
-            <h1>Apex Party Tracker</h1>
-            <h3>Upload image of party</h3>
-            <input
-                type="file"
-                accept="image/*"
-                onChange={e => imageUpload(e.target.files)}
-            />
-        </div>
+        <>
+            <Navbar />
+            <div className={styles.container}>
+                <h1>Apex Party Tracker</h1>
+                <h3>Upload image of party</h3>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={e => imageUpload(e.target.files)}
+                />
+            </div>
+        </>
     )
 }
 

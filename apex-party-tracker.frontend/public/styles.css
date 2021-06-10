@@ -1,3 +1,4 @@
+html,
 body {
     margin: 0;
     padding: 0;
@@ -6,9 +7,19 @@ body {
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+:root {
+    --accent: #ff331f;
+    --green: #86ba90;
+    --white: #f2fcff;
+    --blue: #2a3235;
+    --black: #4c5b61;
 }

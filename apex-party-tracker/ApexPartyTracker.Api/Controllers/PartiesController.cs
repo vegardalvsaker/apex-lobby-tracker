@@ -39,5 +39,11 @@ namespace ApexLobbyTracker.Api.Controllers
             }
             return NoContent();
         }
+        [HttpGet("people", Name = "GetPeopleAsync")]
+        public ActionResult<IEnumerable<string>> GetPeopleASync([FromServices] IPartyService partyService)
+        {
+            return Ok(partyService.GetPersons());
+        }
+            
     }
 }

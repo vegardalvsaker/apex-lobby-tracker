@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import AppContext from '../../AppContext'
 import useParties from '../../hooks/useParties'
+import Navbar from '../Navbar'
 
 interface HistoryProps {
     onUserChange: (user: string) => void
@@ -11,11 +12,17 @@ const History: React.FC<HistoryProps> = props => {
     const context = useContext(AppContext)
     const { parties, isFetching, error } = useParties(context.user)
 
+    useEffect(() => {
+        useParties(context.user)
+    }, [context])
+
     return (
         <>
+            <Navbar />
             {isFetching ? <pre>Loading</pre> : null}
             {context.user ? (
                 <>
+                    <h1>{context.user}</h1>
                     {parties ? (
                         parties.map(p => (
                             <div key={p.eTag}>
@@ -28,6 +35,7 @@ const History: React.FC<HistoryProps> = props => {
                 </>
             ) : (
                 <>
+                    <label>Username: </label>
                     <input
                         type="text"
                         value={userInput}

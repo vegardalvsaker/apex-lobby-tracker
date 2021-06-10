@@ -13,6 +13,7 @@ namespace ApexPartyTracker.Services.Interfaces
         //Task<PartyEntity> AddPartyByTextAsync(string player1, string player2);
         Task<IEnumerable<PartyEntity>> GetPartiesAsync(string user);
         void AddPartiesAsync();
+        IEnumerable<PersonEntity> GetPersons();
 
     }
 }

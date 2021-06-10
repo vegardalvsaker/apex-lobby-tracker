@@ -65,5 +65,21 @@ namespace ApexPartyTracker.Services
             _partyRepository.AddPartiesAsync(parties);
 
         }
+
+        public IEnumerable<PersonEntity> GetPersons()
+        {
+            var personGenerator = new PersonNameGenerator();
+            var names = personGenerator.GenerateMultipleMaleFirstAndLastNames(100);
+            List<PersonEntity> people = new List<PersonEntity>();
+            for (int i= 0; i < names.Count(); i++)
+            {
+                people.Add(new PersonEntity()
+                {
+                    id = Guid.NewGuid(),
+                    name = names.ElementAt(i)
+                }) ;
+            }
+            return people;
+        }
     }
 }

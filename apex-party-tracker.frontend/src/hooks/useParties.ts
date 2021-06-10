@@ -22,6 +22,7 @@ export default (user: string) => {
         )
         if (response.ok) {
             const results = (await response.json()) as Party[]
+            setIsFecthing(false)
             setParties(results)
         } else {
             const error: Error = {
@@ -31,10 +32,10 @@ export default (user: string) => {
             }
             setError(error)
         }
-        setIsFecthing(false)
     }
 
     useEffect(() => {
+        console.log('Gurine')
         if (user) fetchParties()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
